@@ -3,14 +3,38 @@
 </head>
 
 <body>
-  {{> barcode_scanner}}
-  {{> display}}
+	<header>
+		<h3>UTILITIES</h3>
+	</header>
+  	<center>
+  		<p>{{> barcode_scanner}}</p>
+  		<p>{{> display}}</p>
+  		<p>{{> items}}</p>
+      <p>
+        {{#if clickedShow}}
+        <table>
+          <th> Item Name </th>
+          <th> Price </th>
+            {{#each item}}
+              <tr>
+                <td class="itemName"> {{name}} </td>
+                <td class="itemPrice"> {{price}} </td>
+              </tr>
+            {{/each}}
+          </table>
+        {{/if}}
+      </p>
+  	</center>
 </body>
 
 <template name="barcode_scanner">
-  <button id = "scanBtn">Scan</button>
+  <button class = "scanBtn">Scan Barcode</button>
 </template>
 
 <template name="display">
-  <button id = "displayBtn">Display</button>
+  <button class = "displayBtn">Display Barcode</button>
+</template>
+
+<template name="items">
+  <button class = "itemsBtn">Retrieve Items</button>
 </template>

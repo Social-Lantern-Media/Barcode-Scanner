@@ -1,3 +1,9 @@
+itemslist = new Mongo.Collection('items');
+itemslist._collection.insert({
+  name: "Coke",
+  price: 1.70
+});
+
 if (Meteor.isCordova) {
 
   Template.barcode_scanner.events({
@@ -31,5 +37,18 @@ if (Meteor.isCordova) {
       var data = Session.get("code");
       alert("Barcode is: " + data); //displays barcode scanned
     }
-  })
+  });
+
+  Template.items.events({
+    /*show all items*/
+    item(){
+      return itemslist.find({});
+    },
+    'clickedShow': function() {
+      var code = Session.get("code");
+      if (code == "0036000291452"){
+        return itemslist.find({});
+      }
+    }
+  });
 }
