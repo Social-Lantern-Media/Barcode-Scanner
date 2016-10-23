@@ -65,3 +65,15 @@ h3 {
   background-color: #555555;
     color: white;
 }
+
+table{
+  margin-top: 30px;
+  font-family: "Open Sans", sans-serif;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+}
+
+td{
+  color: grey;
+}

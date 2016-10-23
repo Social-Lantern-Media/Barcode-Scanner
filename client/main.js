@@ -3,12 +3,15 @@ itemslist._collection.insert({
   name: "Coke",
   price: 1.70
 });
+itemslist._collection.insert({
+  name: "Pepsi",
+  price: 2.80
+});
 
 if (Meteor.isCordova) {
 
   Template.barcode_scanner.events({
     'click button': function () {
-
       cordova.plugins.barcodeScanner.scan(
         function (result) {
           Session.set("code", result.text);
@@ -39,16 +42,24 @@ if (Meteor.isCordova) {
     }
   });
 
-  Template.items.events({
+}
+
+Template.items.helpers({
     /*show all items*/
-    item(){
+    'item': function(){
       return itemslist.find({});
     },
-    'clickedShow': function() {
+    'correctCode': function(){
+      var data = Session.get("code");
+      data = JSON.stringify(data);
+      if (data == "036000291452"){
+        return true;
+      }
+    },
+    'click button': function() {
       var code = Session.get("code");
       if (code == "0036000291452"){
         return itemslist.find({});
       }
     }
   });
-}

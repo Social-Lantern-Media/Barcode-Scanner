@@ -10,20 +10,6 @@
   		<p>{{> barcode_scanner}}</p>
   		<p>{{> display}}</p>
   		<p>{{> items}}</p>
-      <p>
-        {{#if clickedShow}}
-        <table>
-          <th> Item Name </th>
-          <th> Price </th>
-            {{#each item}}
-              <tr>
-                <td class="itemName"> {{name}} </td>
-                <td class="itemPrice"> {{price}} </td>
-              </tr>
-            {{/each}}
-          </table>
-        {{/if}}
-      </p>
   	</center>
 </body>
 
@@ -37,4 +23,16 @@
 
 <template name="items">
   <button class = "itemsBtn">Retrieve Items</button>
+  <!-- {{#if correctCode}} -->
+  <table>
+          <th> Item Name </th>
+          <th> Price </th>
+            {{#each item}}
+              <tr>
+                <td class="itemName"> {{name}} </td>
+                <td class="itemPrice"> {{price}} </td>
+              </tr>
+            {{/each}}
+          </table>
+<!--           {{/if}} -->
 </template>
