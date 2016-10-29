@@ -1,0 +1,13 @@
+<template name="items">
+  <button class = "itemsBtn">Retrieve Items</button>
+  <table>
+          <th> Item Name </th>
+          <th> Price </th>
+            {{#each item}}
+              <tr>
+                <td class="itemName"> {{name}} </td>
+                <td class="itemPrice"> {{price}} </td>
+              </tr>
+            {{/each}}
+          </table>
+</template>

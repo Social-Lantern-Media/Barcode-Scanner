@@ -1,14 +1,22 @@
-itemslist = new Mongo.Collection('items');
-itemslist._collection.insert({
+import { Meteor } from 'meteor/meteor';
+
+Orders = new Mongo.Collection('items');
+Orders._collection.insert({
   name: "Coke",
-  price: 1.70
+  quantity: 2,
+  price: 3.50,
+  check: false,
+  vat: 5000292001001
 });
-itemslist._collection.insert({
+Orders._collection.insert({
   name: "Pepsi",
-  price: 2.80
+  quantity: 1,
+  price: 1.75,
+  check: false,
+  vat: 5000292001001
 });
 
-if (Meteor.isCordova) {
+if (Meteor.isClient || Meteor.isCordova) {
 
   Template.barcode_scanner.events({
     'click button': function () {
@@ -24,9 +32,9 @@ if (Meteor.isCordova) {
           alert("Scanning failed: " + error);
         },
         {
-          "preferFrontCamera" : false, // iOS and Android
-          "showFlipCameraButton" : true, // iOS and Android
-          "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          "preferFrontCamera" : false, 
+          "showFlipCameraButton" : true, 
+          "formats" : "QR_CODE,PDF_417",
       }
 
      );
@@ -45,21 +53,11 @@ if (Meteor.isCordova) {
 }
 
 Template.items.helpers({
-    /*show all items*/
+    /*show all items according to VAT*/
     'item': function(){
-      return itemslist.find({});
-    },
-    'correctCode': function(){
       var data = Session.get("code");
-      data = JSON.stringify(data);
-      if (data == "036000291452"){
-        return true;
-      }
-    },
-    'click button': function() {
-      var code = Session.get("code");
-      if (code == "0036000291452"){
-        return itemslist.find({});
-      }
+      data = JSON.parse(data);
+      var vatNum = data;
+      return Orders.find({vat:vatNum});
     }
   });
