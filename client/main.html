@@ -1,14 +1,31 @@
 <head>
-  <title>Barcode Scanner</title>
+  <title>Munche</title>
 </head>
 
 <body>
+
 	<header>
-		<h3>UTILITIES</h3>
+		<h3>Munche</h3>
 	</header>
+
   	<center>
-  		<p>{{> barcode_scanner}}</p>
-  		<p>{{> display}}</p>
-  		<p>{{> items}}</p>
+
+    {{> barcode_scanner}}
+
+  	
+  	{{#if showItemsDiv}}
+  		
+  		{{> items}}
+  		<p> {{> home }} {{> pay}} </p>
+  		
+  	{{else}}
+
+  		
+  		<!-- <p>{{> display}}</p> -->
+  		<p>{{> retrieve}}</p>
+
+  	{{/if}}
+
   	</center>
+
 </body>

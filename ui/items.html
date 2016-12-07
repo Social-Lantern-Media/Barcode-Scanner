@@ -1,13 +1,24 @@
 <template name="items">
-  <button class = "itemsBtn">Retrieve Items</button>
-  <table>
-          <th> Item Name </th>
-          <th> Price </th>
-            {{#each item}}
-              <tr>
-                <td class="itemName"> {{name}} </td>
-                <td class="itemPrice"> {{price}} </td>
-              </tr>
-            {{/each}}
-          </table>
-</template>
+
+<table>
+      <tr>
+        <th> Stall No. </th>
+        <th> Stall Name </th>
+  		  <th> Food Item Name </th>
+        <th> Quantity </th>
+  			<th> Price </th>
+      </tr>
+    		{{#each item}}
+          <tr>
+          
+          <td class="stallNo"> <input type = "checkbox">{{stallNo}} </td>
+          <td class="stallName"> {{stall}} </td>
+          <td class="itemName"> {{name}} </td>
+          <td class="itemQuantity"> {{quantity}} </td>
+        	<td class="itemPrice"> {{price}} </td>
+          </tr>
+    		{{/each}}
+		</table>
+		
+ </template>
+

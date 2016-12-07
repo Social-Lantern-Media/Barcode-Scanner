@@ -4,12 +4,15 @@ header {
   color: white;
   padding: 20px 15px 15px 15px;
   position: relative;
-  opacity: 0.5;
 }
 
 h3 {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+}
+
+.loginButtons{
+  margin-top: 50px;
 }
 
 .scanBtn{
@@ -23,6 +26,7 @@ h3 {
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
     font-weight: 700;
+    margin-top:50px;
 }
 
 .scanBtn:hover{
@@ -41,6 +45,7 @@ h3 {
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
 	font-weight: 700;
+  margin-top: 20px;
 }
 
 .displayBtn:hover{
@@ -59,6 +64,7 @@ h3 {
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 .itemsBtn:hover{
@@ -66,14 +72,67 @@ h3 {
     color: white;
 }
 
-table{
-  margin-top: 30px;
-  font-family: "Open Sans", sans-serif;
-  width: 200px;
-  height: 100px;
-  text-align: center;
+.homeBtn{
+  background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    display: inline-block;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+  font-weight: 700;
+  margin-top: 50px;
+  /*margin-left: 50px;*/
 }
+
+.homeBtn:hover{
+  background-color: #555555;
+    color: white;
+}
+
+.payBtn{
+  background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    display: inline-block;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  /*margin-left: 30px;*/
+}
+
+.payBtn:hover{
+  background-color: #555555;
+    color: white;
+}
+
+table{
+  margin-top: 10px;
+  font-family: "Open Sans", sans-serif;
+  width: 100px;
+  height: 300px;
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+/*th{
+  display: inline-block;
+}*/
 
 td{
   color: grey;
+  font-weight: 900;
+
+}
+
+
+h2,p {
+  font-family: "Open Sans", sans-serif;
+  color: black;
 }
